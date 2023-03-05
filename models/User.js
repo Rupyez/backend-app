@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your name"],
     maxLength: [30, "Name cannot excced more than 30"],
-    minLength: [3, "Name cannot excced less than 6"],
+    minLength: [3, "Name cannot excced less than 3"],
   },
 
   email: {

@@ -23,8 +23,17 @@ const createRegisterForm = catchAsyncErrors(async (req, res, next) => {
     to: [req.body.email],
     // to: ["rupeshduwal17@gmail.com", "sandeshbca5@arunima.edu.np"],
 
-    subject: "Congratulations",
-    html: "<h1>Registration Successful<h1>",
+    subject: "Email Confirmation",
+    html: `<h3>Mr./Mrs. ${req.body.legalName},</h3>
+    <p>You have been successfully registered in ${req.body.course} course</p>
+    <p>You Will be contacted within 5 business days to update you about the further enrollment process and other related details</p>
+    <p>Your registration details are as follows.</p>
+    <p>Name: ${req.body.legalName}</p>
+    <p>Phone: ${req.body.phoneNumber}</p>
+    <p>Course: ${req.body.course}</p>
+
+
+    `,
   });
 
   res.status(201).json("Registration successful");
