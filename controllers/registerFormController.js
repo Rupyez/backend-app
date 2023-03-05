@@ -21,6 +21,7 @@ const createRegisterForm = catchAsyncErrors(async (req, res, next) => {
   await sendMail({
     from: `Byte <${mail}>`,
     to: [req.body.email],
+
     // to: ["rupeshduwal17@gmail.com", "sandeshbca5@arunima.edu.np"],
 
     subject: "Email Confirmation",
@@ -32,6 +33,7 @@ const createRegisterForm = catchAsyncErrors(async (req, res, next) => {
     <p>Name: ${req.body.legalName}</p>
     <p>Phone: ${req.body.phoneNumber}</p>
     <p>Course: ${req.body.course}</p>
+    <img src ="http://localhost:8080/1678007436233a.jpg" width="100px" height="100px"/>
     </div>
     `,
   });
