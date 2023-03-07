@@ -1,19 +1,15 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
 
-const feedbackSchema = new mongoose.Schema(
+const feedSchema = new mongoose.Schema(
   {
-    // schema
+    //Schema
     legalName: {
       type: String,
-      required: true,
-      trim: true,
     },
 
     email: {
       type: String,
       required: true,
-      validate: [validator.isEmail, "Please enter a valid email"],
     },
 
     message: {
@@ -24,11 +20,10 @@ const feedbackSchema = new mongoose.Schema(
     phoneNumber: {
       type: Number,
       required: true,
-      unique: true,
     },
   },
   { timestamps: true }
 );
 
-const Feedback = new mongoose.model("Feedback", feedbackSchema);
+const Feedback = new mongoose.model("Feedback", feedSchema);
 module.exports = Feedback;

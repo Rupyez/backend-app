@@ -8,8 +8,6 @@ const createTraining = catchAsyncErrors(async (req, res, next) => {
   let user = req.user;
   let userId = user._id;
 
-  // console.log("***************************8", req.userId);
-
   // for category
   const category = await Category.findById(req.body.category);
   if (!category) return res.status(400).json({ success: false, category });

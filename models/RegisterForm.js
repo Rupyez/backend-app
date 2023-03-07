@@ -24,7 +24,6 @@ const registerFormSchema = new mongoose.Schema(
     phoneNumber: {
       type: Number,
       required: true,
-      unique: true,
     },
     course: {
       type: String,
