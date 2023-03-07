@@ -16,8 +16,18 @@ router.get(
   authorizeRoles("superAdmin", "admin"),
   getAllRegisterForm
 );
-router.get("/:id", getRegisterFormById);
+router.get(
+  "/:id",
+  isAuthenticatedUser,
+  authorizeRoles("superAdmin", "admin"),
+  getRegisterFormById
+);
 router.put("/update/:id", updateRegisterForm);
-router.delete("/delete/:id", deleteRegisterForm);
+router.delete(
+  "/delete/:id",
+  isAuthenticatedUser,
+  authorizeRoles("superAdmin", "admin"),
+  deleteRegisterForm
+);
 
 module.exports = router;
