@@ -9,7 +9,7 @@ let baseUrl = " ";
 if (envirnoment === "development") {
   baseUrl = `http://localhost:${port}`;
 } else if (envirnoment === "test") {
-  baseUrl = `https://learning-management-system-kx6y.onrender.com`;
+  baseUrl = `https://backendapp.up.railway.app`;
 } else if (envirnoment === "production") {
   baseUrl = ``;
 }
